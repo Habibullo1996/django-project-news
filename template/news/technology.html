@@ -1,0 +1,22 @@
+{% extends 'news/base.html' %}
+{% load static %}
+{% block title %} {{news.title}} {% endblock title %} 
+{% block content %}
+
+{% for texnologiya in texnologiya_list %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <a href="{{texnologiya.get_absolute_url}}"> <img src="{{texnologiya.image.url}}" alt="{{texnologiya.title}}" style="width: 30%;"></a>
+           
+            <a href="{{texnologiya.get_absolute_url}}"><h3>{{texnologiya.title}}</h3></a>
+
+        </div>
+    </div>
+</div>
+  
+
+    
+{% endfor %}
+    
+{% endblock content %}

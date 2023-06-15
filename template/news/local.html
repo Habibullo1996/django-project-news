@@ -1,0 +1,24 @@
+{% extends 'news/base.html' %}
+{% load static %}
+{% block title %} Mahalliy yangiliklar{% endblock title %} 
+{% block content %}
+
+{% for local in local_list %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <a href="{{local.get_absolute_url}}"> 
+                <img src="{{local.image.url}}" alt="{{local.title}}" style="width: 30%;">
+            </a>
+           
+            <a href="{{local.get_absolute_url}}"><h3>{{local.title}}</h3></a>
+
+        </div>
+    </div>
+</div>
+  
+
+    
+{% endfor %}
+    
+{% endblock content %}
